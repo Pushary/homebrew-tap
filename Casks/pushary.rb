@@ -17,8 +17,7 @@ cask "pushary" do
 
   app "Pushary.app"
 
-  uninstall quit:       "com.pushary.app",
-            login_item: "Pushary"
+  uninstall quit: "com.pushary.app"
 
   zap trash: [
     "~/.pushary/bin/.bridge-cache",

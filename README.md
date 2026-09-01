@@ -27,7 +27,9 @@ served, turn automatic checks off in the app's settings.
 brew uninstall --cask pushary
 ```
 
-That removes the app and its login item. To take its data with it:
+That quits the app and removes it. Its launch-at-login registration goes with the
+bundle, because the app registers through `SMAppService` rather than as a login
+item. To take its data too:
 
 ```
 brew uninstall --zap --cask pushary
