@@ -27,17 +27,23 @@ served, turn automatic checks off in the app's settings.
 brew uninstall --cask pushary
 ```
 
-That quits the app and removes it. Its launch-at-login registration goes with the
-bundle, because the app registers through `SMAppService` rather than as a login
-item. To take its data too:
+That quits the app, disconnects it from every agent it wired, and removes it.
+Disconnecting first is the point: the hooks it writes name a file in your home
+directory rather than one inside the bundle, so deleting the app alone would
+leave every agent calling a path with nothing behind it. Its launch-at-login
+registration goes with the bundle, because the app registers through
+`SMAppService` rather than as a login item.
+
+To take its data too:
 
 ```
 brew uninstall --zap --cask pushary
 ```
 
 The zap leaves `~/.pushary/config.json` alone, because that is the CLI's
-credential, not the app's. Hooks the app wired into your agents stay wired; run
-`npx @pushary/agent-hooks clean` to remove those.
+credential, not the app's. Hooks you wired with the Pushary CLI rather than with
+this app are also left alone; run `npx @pushary/agent-hooks clean` to remove
+those.
 
 ## This file is generated
 

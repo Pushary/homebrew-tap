@@ -1,6 +1,6 @@
 cask "pushary" do
-  version "0.1.12"
-  sha256 "5b6bb7d9314bc1e2e9f5c5a52485eb5498a6bc5214013d6cdb0b49dae68939c6"
+  version "0.1.13"
+  sha256 "4c3fe8083927fe8b5cbf103819857fe6eedff2d72187e16f846c880188b4668a"
 
   url "https://github.com/Pushary/pushary-mac/releases/download/v#{version}/Pushary.dmg"
   name "Pushary"
@@ -17,11 +17,14 @@ cask "pushary" do
 
   app "Pushary.app"
 
-  uninstall quit: "com.pushary.app"
+  uninstall quit: "com.pushary.app",
+            script: {
+              executable:   "#{appdir}/Pushary.app/Contents/Helpers/pushary-bridge",
+              args:         ["--disconnect"],
+              must_succeed: false,
+            }
 
   zap trash: [
-    "~/.pushary/bin/.bridge-cache",
-    "~/.pushary/bin/pushary-bridge",
     "~/.pushary/run",
     "~/Library/Application Support/Pushary/com.pushary.app.mac.*",
     "~/Library/Caches/com.pushary.app",
