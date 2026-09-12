@@ -1,6 +1,6 @@
 cask "pushary" do
-  version "0.1.23"
-  sha256 "7c24ce21a16ad668a1ddcda28457c3415a4233b379ddf6ddb4392f892e020375"
+  version "0.1.24"
+  sha256 "5c795c2ec1025e4d829e5d694a0736f8b584fd73324b93741c8af0b62f7dd6af"
 
   url "https://github.com/Pushary/pushary-mac/releases/download/v#{version}/Pushary.dmg"
   name "Pushary"
