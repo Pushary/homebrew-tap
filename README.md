@@ -42,7 +42,7 @@ brew uninstall --zap --cask pushary
 
 The zap leaves `~/.pushary/config.json` alone, because that is the CLI's
 credential, not the app's. Hooks you wired with the Pushary CLI rather than with
-this app are also left alone; run `npx @pushary/agent-hooks clean` to remove
+this app are also left alone; run `npx pushary@latest clean` to remove
 those.
 
 ## This file is generated
