@@ -1,6 +1,6 @@
 cask "pushary" do
-  version "0.1.62"
-  sha256 "01b8b8a84d4782020a290bb24e8b5caa368860051b26ffd0b1b33bef01003dc9"
+  version "0.1.63"
+  sha256 "b4cbce763ae0e44ab7eaaa6c38a866b4382f476e8394be50262c3c809a529add"
 
   url "https://github.com/Pushary/pushary-mac/releases/download/v#{version}/Pushary.dmg"
   name "Pushary"
@@ -24,11 +24,16 @@ cask "pushary" do
               must_succeed: false,
             }
 
-  zap trash: [
-    "~/.pushary/run",
-    "~/Library/Application Support/Pushary/com.pushary.app.mac.*",
-    "~/Library/Caches/com.pushary.app",
-    "~/Library/HTTPStorages/com.pushary.app",
-    "~/Library/Preferences/com.pushary.app.plist",
-  ]
+  zap script: {
+        executable:   "Pushary.app/Contents/Helpers/pushary-bridge",
+        args:         ["--revoke-device-key"],
+        must_succeed: false,
+      },
+      trash:  [
+        "~/.pushary/run",
+        "~/Library/Application Support/Pushary/com.pushary.app.mac.*",
+        "~/Library/Caches/com.pushary.app",
+        "~/Library/HTTPStorages/com.pushary.app",
+        "~/Library/Preferences/com.pushary.app.plist",
+      ]
 end

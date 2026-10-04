@@ -40,6 +40,12 @@ To take its data too:
 brew uninstall --zap --cask pushary
 ```
 
+The zap also revokes this Mac's Pushary device key on pushary.com and then
+deletes the local copy. If pushary.com cannot be reached, the uninstall still
+finishes and says the key is still active. A plain `brew uninstall` does not
+revoke it, because Homebrew runs the same uninstall step on every
+`brew upgrade` and `brew reinstall`, and an upgrade must not sign the Mac out.
+
 The zap leaves `~/.pushary/config.json` alone, because that is the CLI's
 credential, not the app's. Hooks you wired with the Pushary CLI rather than with
 this app are also left alone; run `npx pushary@latest clean` to remove
