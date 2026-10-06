@@ -1,6 +1,6 @@
 cask "pushary" do
-  version "0.1.73"
-  sha256 "fb7ed748452cccc44f692abf57e8ca3f542c7b6fa3f42e8dbe17886b2d3e9b36"
+  version "0.1.74"
+  sha256 "cdda9d236944f7f3af313d725779ec193997ebebf6b1b0bd1386f22e5e7fccfb"
 
   url "https://github.com/Pushary/pushary-mac/releases/download/v#{version}/Pushary.dmg"
   name "Pushary"
@@ -30,6 +30,8 @@ cask "pushary" do
         must_succeed: false,
       },
       trash:  [
+        "~/.pushary/native-transcript-consent.json",
+        "~/.pushary/native-transcripts",
         "~/.pushary/run",
         "~/Library/Application Support/Pushary/com.pushary.app.mac.*",
         "~/Library/Caches/com.pushary.app",
