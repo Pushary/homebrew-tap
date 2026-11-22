@@ -1,0 +1,17 @@
+Pushary Homebrew tap
+Copyright (c) 2026 RalphNex OÜ. All rights reserved.
+
+This repository, including the cask in Casks/pushary.rb and its README, is
+owned by RalphNex OÜ, Estonia.
+
+You may use this repository with Homebrew to install, update and uninstall
+Pushary for Mac. No other right or license is granted.
+
+Pushary for Mac itself is proprietary software owned by RalphNex OÜ and
+licensed under the Pushary Terms of Service at https://pushary.com/terms. See
+the LICENSE in https://github.com/Pushary/pushary-mac.
+
+THE CONTENTS OF THIS REPOSITORY ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, TO THE EXTENT PERMITTED BY LAW.
+
+Questions: business@pushary.com
