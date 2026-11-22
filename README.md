@@ -1,6 +1,8 @@
 # Pushary tap
 
-Pushary for Mac: approvals for your AI coding agents, at the top of the screen.
+Pushary for Mac: approvals and questions from your AI agents, at the top of the screen.
+
+Sign in and pick a plan, and the app sets up Claude Code, Codex, Cursor, Gemini CLI, Hermes and the other agents it supports. When an agent needs a yes or an answer, it shows in the notch, and on your phone when you step away. Plans start at $9.99 a month after a 3-day trial: [pricing](https://pushary.com/pricing?utm_source=github&utm_medium=oss-adapter&utm_campaign=homebrew-tap&utm_content=readme). [About the Mac app](https://pushary.com/mac-notch-app?utm_source=github&utm_medium=oss-adapter&utm_campaign=homebrew-tap&utm_content=readme) · [Mac app guide](https://pushary.com/docs/agents/mac-app?utm_source=github&utm_medium=oss-adapter&utm_campaign=homebrew-tap&utm_content=readme)
 
 ```
 brew install --cask pushary/tap/pushary
@@ -48,7 +50,7 @@ revoke it, because Homebrew runs the same uninstall step on every
 
 The zap leaves `~/.pushary/config.json` alone, because that is the CLI's
 credential, not the app's. Hooks you wired with the Pushary CLI rather than with
-this app are also left alone; run `npx pushary@latest clean` to remove
+this app are also left alone; run `npx -y pushary@latest clean` to remove
 those.
 
 ## This file is generated
